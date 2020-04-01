@@ -23,6 +23,7 @@ public class ArrayDeleteQuiz {
 		
 		for(i=0 ; i<kakao.length;i++) {
 			if(name.equals(kakao[i])) {
+				System.out.println(kakao[i]+"의 이름을 삭제합니다.");
 				for(int j=i; j<kakao.length-1;j++) {
 					kakao[j]=kakao[j+1];
 					
@@ -31,7 +32,8 @@ public class ArrayDeleteQuiz {
 					new_room[k]=kakao[k];
 				}
 				kakao=new_room;
-				
+				new_room=null;
+				System.out.println(Arrays.toString(kakao));
 				break;			
 			}
 			
@@ -39,9 +41,7 @@ public class ArrayDeleteQuiz {
 				System.out.println("입력하신 이름은 없습니다.");
 			}
 		}
-		System.out.println(Arrays.toString(kakao));
-		
-		
+		sc.close();
 		
 		
 		
