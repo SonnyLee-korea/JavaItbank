@@ -20,6 +20,10 @@
  7. 이 때는 반환유형을 메서드 선언시에 비워두지 마시고, 반드시
  void라는 키워드를 작성해 주셔야 합니다.
  
+ 8. 모든 메서드는 return을 만나면 강제로 메서드가 종료됩니다.
+ 따라서 조건 없이 return문 아래에 코드를 작성할 수 없습니다.
+ void메서드에서는 return 키워드를 탈출 기능으로 사용할 수 있습니다.
+ 
  */
 
 
@@ -28,6 +32,7 @@ public class MethodExample3 {
 	static int add(int n1, int n2) {
 		return n1+n2;
 	}
+
 
 	static int[] operateTotal(int n1, int n2) {
 		return new int[] {add(n1,n2),n1-n2,n1*n2,n1/n2};
@@ -45,6 +50,15 @@ public class MethodExample3 {
 	static void multi(int n1, int n2) {
 		int result = n1*n2;
 		System.out.printf("%d x %d = %d\n",n1,n2,result);
+	}
+	
+	static void divide(int n1, int n2) {
+		if(n2==0) {
+			System.out.println("0으로 나누지 마세요!");
+			return;
+		}
+		int result = n1/n2;
+		System.out.printf("%d /%d =%d\n",n1,n2,result);
 	}
 	
 	
@@ -82,6 +96,8 @@ public class MethodExample3 {
 		 - void메서드는 단순히 동작을 지시하는 역할을 수행합니다.
 		 
 		 */
+		
+		divide(20,0);
 	}
 
 }
